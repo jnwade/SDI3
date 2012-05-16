@@ -23,12 +23,12 @@ var venue = function (name) {
     var seatGuest = function (guests, age) {
         if ( age >= 18) {
         ofAgeGuests.push(guests);
-        } else { console.log( "I'm sorry, 18 and up only.")
+        } else { console.log( "I'm sorry " + guests + ", 18 and up only.")
         };
     };
-    var staffNeeded = function (slammed, needed) {
+     var staffNeeded = function (slammed) {
         if ( slammed === true) {
-            staff.push(needed);
+            console.log("Call in reinforcements!");
         } else {console.log( "We got this!")
         };
     };
@@ -39,11 +39,12 @@ var venue = function (name) {
         };
     var getName = function () { return name; };
     return {
-        "name": getName,
-        "Admission" : ofAgeGuests,
-        "staffNeeded" : staffNeeded,
+        "name": getName, // Gets the name of the venue
+        "Admission" : ofAgeGuests, // Returns guest names that met the age requirements to enter the venue
+        "staffNeeded" : staffNeeded, // returns whether or not more staff is needed to accomidate guests
         "seatGuest" : seatGuest,
-        "guestList" : guestList
+        "guestList" : guestList,
+        "staff" : staff
     };
 };
 
@@ -52,11 +53,24 @@ var kittyOsheas = venue("Kitty O'Shea's");
 var dexters = venue("Dexters");
 var backStage = venue("Back Stage");
 
+
+
 dexters.seatGuest("Stephanie", 18); 
+dexters.seatGuest("Mike", 25);
+backStage.seatGuest("Amanda", 20);
+backStage.seatGuest("Josh", 26);
+backStage.seatGuest("Tim", 17);
+backStage.seatGuest("Jenny", 15);
 console.log(dexters.name()); // Accessor
 console.log(dexters);
-
+dexters.staffNeeded( true, 2);
 dexters.guestList();
-dexters.staffNeeded(true, 2);
+console.log(backStage.name());
+console.log(backStage);
+backStage.staffNeeded( false, 0);
+backStage.guestList();
+
+
+
 
 
