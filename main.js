@@ -15,14 +15,21 @@
 //var receivedjson = JSON.parse(jsonstring);
 //console.log(receivedjson);
 
-// Revealing Module Pattern
 
+// Constructor
 var venue = function (name) {
     var ofAgeGuests = [];
+    var staff = [];
     var seatGuest = function (guests, age) {
         if ( age >= 18) {
         ofAgeGuests.push(guests);
         } else { console.log( "I'm sorry, 18 and up only.")
+        };
+    };
+    var staffNeeded = function (slammed, needed) {
+        if ( slammed === true) {
+            staff.push(needed);
+        } else {console.log( "We got this!")
         };
     };
     var guestList = function () {
@@ -30,10 +37,11 @@ var venue = function (name) {
             console.log("Checked in on " + name + " guest list: " + ofAgeGuests[i] + ".");
         }
         };
+    var getName = function () { return name; };
     return {
-        "name": name,
+        "name": getName,
         "Admission" : ofAgeGuests,
-        "staff" : [],
+        "staffNeeded" : staffNeeded,
         "seatGuest" : seatGuest,
         "guestList" : guestList
     };
@@ -44,10 +52,11 @@ var kittyOsheas = venue("Kitty O'Shea's");
 var dexters = venue("Dexters");
 var backStage = venue("Back Stage");
 
-dexters.seatGuest("Stephanie", 18);
-
+dexters.seatGuest("Stephanie", 18); 
+console.log(dexters.name()); // Accessor
 console.log(dexters);
 
 dexters.guestList();
+dexters.staffNeeded(true, 2);
 
 
