@@ -6,6 +6,7 @@ var jon = json.musicians.Drummer;
 var mikesOfAgeGuests = ["Joe", " Jason", " Alicia"];
 var shawnsOfAgeGuests = ["Jim", " Will", " Brian"];
 var jonsOfAgeGuests = ["Bill", " Sabrina", " Regina"];
+var guestListAvailable = [ "yes", "no" ];
 
 var allGuests = function() {
     return mikesOfAgeGuests + ", " + shawnsOfAgeGuests + ", " + jonsOfAgeGuests + ".";
@@ -19,9 +20,9 @@ var artistProfile = [
         smoke: false,
         goodTimes: function() {
             if( mike.mesh === true && shawn.mesh === true && jon.mesh === true) {
-    console.log("Mike's gonna have some fun!");
+                    return "Mike's gonna have some fun!"
         } else {
-                    console.log( "This is gonna be interesting" );
+                    return "This is gonna be interesting"
                 }     
             }
     },
@@ -52,7 +53,7 @@ var artistProfile = [
             }
     },
 ];
-    
+
     
 var guestList = {
     "mikesFriends" : [
@@ -97,9 +98,23 @@ var guestList = {
                     } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
                 };  return "Admission: " + false + ".";
             },
-        },  
+        },
+        {
+            jonsList: function() {
+                if(guestListAvailable[0] === "yes") {
+                    for (var i = 0, g = guestList.jonsFriends[4].length; i < g; i++) {
+                    console.log( "Jon has " +  guestList.jonsFriends[i] + " on his list.");
+                    } 
+                }   
+                    else
+                {
+                    console.log("Sorry, no guest list for this show.")
+                } 
+            }
+        }
     ]
 };
+
 
 
 
@@ -111,6 +126,9 @@ console.log(guestList.shawnsFriends[4].addGuests(" Tom", 25));
 console.log(shawnsOfAgeGuests);
 console.log(guestList.jonsFriends[5].addGuests(" James", 16));
 console.log(allGuests());
+console.log(artistProfile[0].goodTimes());
+console.log(guestList.jonsFriends[6].jonsList());
+
 
 
 
