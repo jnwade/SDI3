@@ -31,10 +31,7 @@ var json = {
     }
 };
 
-for (var key in json.musicians) {
-    var musician = json.musicians[key];
-    musician.venuesPlayed
-};
+
 
 var json2 = {
     "venue" : [
