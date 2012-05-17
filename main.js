@@ -67,7 +67,21 @@ var guestList = {
                     } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
                 };    return "Guest admitted";
             },
-        },   
+        },
+        {
+            mikesList: function() {
+                if(guestListAvailable[0] === "yes") {
+                    for (var i = 0, g = guestList.mikesFriends[2].length; i < g; i++)
+                    {
+                        console.log( "Mike has " +  guestList.mikesFriends[i] + " on his list.")
+                    } 
+                }   
+                    else
+                {
+                        console.log("Sorry, no guest list for this show.")
+                } 
+            }
+        }
     
     ],
     "shawnsFriends" : [
@@ -82,7 +96,21 @@ var guestList = {
                     } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
                 };    return "Guest admitted";
             },
-        },  
+        },
+        {
+            shawnsList: function() {
+                if(guestListAvailable[0] === "yes") {
+                    for (var i = 0, g = guestList.shawnsFriends[3].length; i < g; i++)
+                    {
+                        console.log( "Shawn has " +  guestList.shawnsFriends[i] + " on his list.")
+                    } 
+                }   
+                    else
+                {
+                        console.log("Sorry, no guest list for this show.")
+                } 
+            }
+        }
      ],
     "jonsFriends" : [
         "Jen",
@@ -102,13 +130,14 @@ var guestList = {
         {
             jonsList: function() {
                 if(guestListAvailable[0] === "yes") {
-                    for (var i = 0, g = guestList.jonsFriends[4].length; i < g; i++) {
-                    console.log( "Jon has " +  guestList.jonsFriends[i] + " on his list.");
+                    for (var i = 0, g = guestList.jonsFriends[4].length; i < g; i++)
+                    {
+                        console.log( "Jon has " +  guestList.jonsFriends[i] + " on his list.")
                     } 
                 }   
                     else
                 {
-                    console.log("Sorry, no guest list for this show.")
+                        console.log("Sorry, no guest list for this show.")
                 } 
             }
         }
@@ -128,7 +157,8 @@ console.log(guestList.jonsFriends[5].addGuests(" James", 16));
 console.log(allGuests());
 console.log(artistProfile[0].goodTimes());
 console.log(guestList.jonsFriends[6].jonsList());
-
+console.log(guestList.shawnsFriends[5].shawnsList());
+console.log(guestList.mikesFriends[4].mikesList());
 
 
 
