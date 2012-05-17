@@ -78,7 +78,7 @@ var guestList = {
                 }   
                     else
                 {
-                        console.log("Sorry, no guest list for this show.")
+                        console.log("Sorry Mike, no guest list for you.")
                 } 
             }
         }
@@ -107,7 +107,7 @@ var guestList = {
                 }   
                     else
                 {
-                        console.log("Sorry, no guest list for this show.")
+                        console.log("Sorry Shawn, no guest list for this show.")
                 } 
             }
         }
@@ -132,12 +132,12 @@ var guestList = {
                 if(guestListAvailable[0] === "yes") {
                     for (var i = 0, g = guestList.jonsFriends[4].length; i < g; i++)
                     {
-                        console.log( "Jon has " +  guestList.jonsFriends[i] + " on his list.")
+                        return "Jon has " +  guestList.jonsFriends[i] + " on his list."
                     } 
                 }   
                     else
                 {
-                        console.log("Sorry, no guest list for this show.")
+                        return "Sorry Jon, no guest list for this show."
                 } 
             }
         }
