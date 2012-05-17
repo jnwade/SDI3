@@ -6,6 +6,7 @@ var jon = json.musicians.Drummer;
 var mikesOfAgeGuests = ["Joe", " Jason", " Alicia"];
 var shawnsOfAgeGuests = ["Jim", " Will", " Brian"];
 var jonsOfAgeGuests = ["Bill", " Sabrina", " Regina"];
+
 var allGuests = function() {
     return mikesOfAgeGuests + ", " + shawnsOfAgeGuests + ", " + jonsOfAgeGuests + ".";
 };
@@ -54,46 +55,47 @@ var artistProfile = [
     
     
 var guestList = {
-    "Mikes Freinds" : [
+    "mikesFriends" : [
         "Crystal",
         "Justin",
         "Michelle",
         {
-            addGuests: function( Name, age) {
+            addGuests: function( name, age) {
                  if ( age >= 18) {
-                 mikesOfAgeGuests.push(guests);
-                    } else { console.log( "I'm sorry " + guests + ", 18 and up only.") // If they are under 18 they are turned away.
-                };   
+                 mikesOfAgeGuests.push(name);
+                    } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
+                };    return "Guest admitted";
             },
         },   
     
     ],
-    "Shawns Friends" : [
+    "shawnsFriends" : [
         "Kyle",
         "Christian",
         "Sarah",
         "Melissa",
         {
-            addGuests: function( Name, age) {
+            addGuests: function( name, age) {
                  if ( age >= 18) {
-                 shawnsOfAgeGuests.push(guests);
-                    } else { console.log( "I'm sorry " + guests + ", 18 and up only.") // If they are under 18 they are turned away.
-                };   
+                 shawnsOfAgeGuests.push( name );
+                    } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
+                };    return "Guest admitted";
             },
         },  
      ],
-    "Jons Friends" : [
+    "jonsFriends" : [
         "Jen",
         "Jessica",
         "Chris",
         "Mike",
         "Betsy",
         {
-            addGuests: function( Name, age) {
+            addGuests: function( name, age) {
                  if ( age >= 18) {
-                 jonsOfAgeGuests.push(guests);
-                    } else { console.log( "I'm sorry " + guests + ", 18 and up only.") // If they are under 18 they are turned away.
-                };   
+                 jonsOfAgeGuests.push(name);
+                    return "Guest Aditted";
+                    } else { console.log( "I'm sorry " + name + ", 18 and up only.") // If they are under 18 they are turned away.
+                };  return "Admission: " + false + ".";
             },
         },  
     ]
@@ -105,4 +107,12 @@ console.log(guestList);
 console.log(artistProfile[1].goodTimes());
 console.log(jon.venuesPlayed);
 console.log(allGuests());
+console.log(guestList.shawnsFriends[4].addGuests(" Tom", 25));
+console.log(shawnsOfAgeGuests);
+console.log(guestList.jonsFriends[5].addGuests(" James", 16));
+console.log(allGuests());
+
+
+
+
 
